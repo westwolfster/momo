@@ -1,7 +1,7 @@
 {
   "dns": {
     "servers": [
-      {"tag": "local", "type": "udp", "server": "223.5.5.5"},
+      {"tag": "local", "type": "udp", "server": "202.101.224.69"},
       {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
       {"tag": "foreign", "type": "https", "server": "8.8.8.8", "detour": "🚀 默认代理"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
@@ -96,7 +96,7 @@
     ],
     "final": "🐠 漏网之鱼",
     "default_domain_resolver": {"server": "public"}
-  }
+  },
   "inbounds": [
     {
       "tag": "dns-in",
