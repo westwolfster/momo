@@ -1,0 +1,121 @@
+{
+    "log": {
+      "level": "info",
+      "timestamp": true
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "store_fakeip": true
+        },
+        "clash_api": {
+            "external_controller": "0.0.0.0:9090",
+            "external_ui": "ui"
+        }
+    },
+    "dns": {
+      "servers": [
+        {
+          "tag": "local",
+          "address": "202.101.224.69", 
+          "detour": "direct"
+        },
+        {
+          "tag": "remote",
+          "address": "tls://1.1.1.1",
+          "detour": "proxy"
+        }
+      ],
+      "rules": [
+        {
+          "outbound": ["direct"],
+          "server": "local",
+          "rule_set": ["geoip-cn", "geosite-cn"]
+        },
+        {
+          "server": "remote"
+        }
+      ],
+      "final": "remote",
+      "strategy": "prefer_ipv4",
+      "fakeip": {
+        "enabled": true,
+        "inet4_range": "198.18.0.0/15"
+      }
+    },
+    "inbounds": [
+      {
+        "type": "tun",
+        "tag": "tun-in",
+        "interface_name": "singbox",
+        "inet4_address": "172.19.0.1/30",
+        "auto_route": true,
+        "sniff": true
+      },
+      {
+        "type": "mixed",
+        "tag": "socks-in",
+        "listen": "0.0.0.0",
+        "listen_port": 1080
+      }
+    ],
+    "outbounds": [
+      {
+        "type": "selector",
+        "tag": "proxy",
+        "outbounds": [
+          "auto",
+          "direct",
+          "block"
+        ],
+        "default": "auto"
+      },
+      {
+        "type": "direct",
+        "tag": "direct"
+      },
+      {
+        "type": "block",
+        "tag": "block"
+      },
+      {
+        "type": "urltest",
+        "tag": "auto",
+        "outbounds": [
+          "🇭🇰 HongKong",
+          "🇸🇬 Singapore",
+          "🇯🇵 Japan",
+          "🇺🇸 UnitedStates"
+        ],
+        "url": "http://www.gstatic.com/generate_204",
+        "interval": "5m"
+      }
+    ],
+    "route": {
+      "rules": [
+        {
+          "rule_set": ["geoip-cn", "geosite-cn"],
+          "outbound": "direct"
+        },
+        {
+          "ip_cidr": ["192.168.0.0/16", "10.0.0.0/8", "127.0.0.1/8"],
+          "outbound": "direct"
+        }
+      ],
+      "rule_set": [
+        {
+          "tag": "geoip-cn",
+          "type": "geoip",
+          "download_url": "https://ghfast.top/https://github.com/SagerNet/sing-geoip/releases/latest/download/geoip.db"
+        },
+        {
+          "tag": "geosite-cn",
+          "type": "geosite",
+          "download_url": "https://ghfast.top/https://github.com/SagerNet/sing-geosite/releases/latest/download/geosite.db"
+        }
+      ],
+      "auto_detect_interface": true,
+      "final": "proxy"
+    }
+  }
+  
