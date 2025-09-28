@@ -1,6 +1,4 @@
 {
-    "version": 1,
-    
     "log": {
       "disabled": false,
       "level": "error",
@@ -9,9 +7,9 @@
     
     "dns": {
       "servers": [
-        {"tag": "local", "type": "udp", "address": "223.5.5.5"},
-        {"tag": "public", "type": "https", "address": "https://dns.alidns.com", "detour": "🎯 全球直连", "domain_strategy": "prefer_ipv4"},
-        {"tag": "foreign", "type": "https", "address": "https://8.8.8.8", "detour": "🚀 默认代理", "domain_strategy": "prefer_ipv4"},
+        {"tag": "local", "type": "udp", "server": "223.5.5.5"},
+        {"tag": "public", "type": "https", "server": "dns.alidns.com", "detour": "🎯 全球直连", "domain_strategy": "prefer_ipv4"},
+        {"tag": "foreign", "type": "https", "server": "8.8.8.8", "detour": "🚀 默认代理", "domain_strategy": "prefer_ipv4"},
         {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
       ],
       "rules": [
@@ -164,7 +162,7 @@
         "store_fakeip": true
       },
       "clash_api": {
-        "external_controller": "0.0.0.0:9095",
+        "external_controller": "0.0.0.0:9090",
         "external_ui": "/etc/momo/run/ui",
         "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
         "external_ui_download_detour": "🎯 全球直连",
@@ -172,4 +170,5 @@
         "default_mode": "rule"
       }
     }
+
   }
