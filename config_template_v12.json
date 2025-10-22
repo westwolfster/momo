@@ -48,7 +48,6 @@
         {"clash_mode": "direct", "outbound": "🎯 全球直连"},
         {"clash_mode": "global", "outbound": "GLOBAL"},
         {"action": "reject","protocol": "quic","method": ""},
-        {"action": "reject","rule_set": ["Category-Ads"],"method": ""},
         {"rule_set": "geosite-ai", "outbound": "🧠 AI"},
         {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
         {"rule_set": "geosite-google", "outbound": "🍀 Google"},
@@ -71,7 +70,6 @@
         {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
       ],
       "rule_set": [
-        {"tag": "Category-Ads","type": "remote","format": "binary","url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs","download_detour": "🎯 全球直连"},
         {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🎯 全球直连"},
         {"tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "🎯 全球直连"},
         {"tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "🎯 全球直连"},
@@ -138,4 +136,5 @@
       "timestamp": true,
       "output": "sing-box.log"
     }
+
   }
