@@ -44,6 +44,7 @@
       "rules": [
         {"action": "sniff", "inbound": "tun-in"},
         {"action": "hijack-dns","protocol": "dns"},
+        {"rule_set": "geoip-lan", "outbound": "🎯 全球直连"},
         {"ip_is_private": true, "outbound": "🎯 全球直连"},
         {"clash_mode": "direct", "outbound": "🎯 全球直连"},
         {"clash_mode": "global", "outbound": "GLOBAL"},
@@ -89,6 +90,7 @@
         {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连"},
         {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "🎯 全球直连"},
         {"tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🎯 全球直连"},
+        {"tag": "geoip-lan", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/lan.srs", "download_detour": "🎯 全球直连"}
         {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/srs/cn.srs", "download_detour": "🎯 全球直连"}
       ],
       "final": "🐠 漏网之鱼",
@@ -139,5 +141,6 @@
     }
 
   }
+
 
 
