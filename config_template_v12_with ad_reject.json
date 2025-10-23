@@ -94,6 +94,7 @@
         {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/srs/cn.srs", "download_detour": "🎯 全球直连"}
       ],
       "final": "🐠 漏网之鱼",
+      "auto_detect_interface": true,
       "default_domain_resolver": {"server": "public"}
     },
     "inbounds": [
@@ -138,4 +139,5 @@
       "timestamp": true,
       "output": "sing-box.log"
     }
+
   }
