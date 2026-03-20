@@ -115,7 +115,7 @@
         "auto_redirect": true,
         "endpoint_independent_nat": false,
         "stack": "system",
-        "exclude_uid": [0]
+        "exclude_uid": [997]
       }
     ],
     "experimental": {
